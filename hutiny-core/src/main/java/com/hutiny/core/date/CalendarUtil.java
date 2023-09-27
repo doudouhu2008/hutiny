@@ -19,4 +19,13 @@ public class CalendarUtil {
     public static boolean isAM(Calendar calendar) {
         return Calendar.AM == calendar.get(Calendar.AM_PM);
     }
+
+    /**
+     * 是否为下午
+     * @param calendar {@link Calendar}
+     * @return 是否为下午
+     */
+    public static boolean isPM(Calendar calendar) {
+        return Calendar.PM == calendar.get(Calendar.AM_PM);
+    }
 }
