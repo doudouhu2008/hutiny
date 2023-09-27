@@ -74,4 +74,20 @@ public class CalendarUtilTest {
         calendar.set(Calendar.HOUR, 12);
         Assert.assertTrue(CalendarUtil.isAM(calendar));
     }
+
+    @Test
+    public void testIsPM_Positive() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.AM_PM, Calendar.PM);
+        boolean result = CalendarUtil.isPM(calendar);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void testIsPM_Negative() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.AM_PM, Calendar.AM);
+        boolean result = CalendarUtil.isPM(calendar);
+        Assert.assertFalse(result);
+    }
 }
